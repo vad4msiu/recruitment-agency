@@ -1,0 +1,18 @@
+<table class="table table-striped requests">
+  <tr class="headers">
+    <th>ID</th>
+    <th>Name</th>
+    <th>Salary</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  <% employees.each do |employee|%>
+    <tr>
+      <td><%= employee.id %></td>
+      <td><%= employee.name %></td>
+      <td><%= number_to_currency(employee.salary) %></td>
+      <td><%= employee.status %></td>
+      <td><%= link_to "show", employee_path(employee), class: 'btn btn-sm btn-primary' %></td>
+    </tr>
+  <% end %>
+</table>

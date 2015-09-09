@@ -1,0 +1,26 @@
+<%= render partial: 'web/shared/back_link' %>
+
+<div class="jumbotron">
+  <div class="container">
+    <p>
+      <b>ID</b>: <%= @employee.id %>
+    </p>
+    <p>
+      <b>Name</b>: <%= @employee.name %>
+    </p>
+    <p>
+      <b>Status</b>: <%= @employee.status %>
+    </p>
+    <p>
+      <b>Salary</b>: <%= number_to_currency(@employee.salary) %>
+    </p>
+    <p>
+      <b>Skills</b>: <%= skills_presentation(@employee.skills) %>
+    </p>
+  </div>
+</div>
+
+<h3>Exact match jobs (first <%= Employee::MATCH_LIMIT  %>)</h3>
+<%= render partial: "web/jobs/list", locals: { jobs: @employee.exact_match_jobs } %>
+<h3>Partial match jobs (first <%= Employee::MATCH_LIMIT  %>)</h3>
+<%= render partial: "web/jobs/list", locals: { jobs: @employee.partial_match_jobs } %>

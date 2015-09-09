@@ -1,0 +1,6 @@
+<h3>Employees</h1>
+<p>
+  <%= link_to "Add new", new_employee_path, class: 'btn btn-primary' %>
+</p>
+<%= render partial: 'list', locals: { employees: @employees }  %>
+<%= paginate @employees %>

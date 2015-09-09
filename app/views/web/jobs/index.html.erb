@@ -1,0 +1,6 @@
+<h3>Jobs</h1>
+<p>
+  <%= link_to "Add new", new_job_path, class: 'btn btn-primary' %>
+</p>
+<%= render partial: "web/jobs/list", locals: { jobs: @jobs } %>
+<%= paginate @jobs %>
