@@ -6,7 +6,6 @@ tmp/
 doc/
 db/schema.rb
 config/database.yml
-config/secrets.yml
 .DS_Store
 .yardoc
 .tags
